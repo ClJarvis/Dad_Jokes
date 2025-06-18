@@ -1,5 +1,7 @@
 const jokeText= document.getElementById("joke");
 const jokeBtn = document.getElementById("jokeBtn");
+const enteredJoke = document.getElementById("showJoke");
+const inputJ = document.getElementById("enterJokes");
 
 
 jokeBtn.addEventListener("click", generateJokes)
@@ -11,10 +13,6 @@ async function generateJokes(){
 		"https://v2.jokeapi.dev/joke/Pun?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single"
 		 )
 	const data = await res.json();
-	console.log(data);
-	console.log(data.joke);
-	console.log(data.setup);
-	console.log(data.delivery);
 	let joke = ""
 	if (data.joke == undefined) {
 		joke = `${data.setup} <br /> ${data.delivery}`
@@ -24,4 +22,18 @@ async function generateJokes(){
 		jokeText.innerHTML = joke
 }
 
-/* jokes voa https://jokeapi.dev/ */
+function showTheJoke() {
+function getRandomResponse(arr) {
+	const responseIndex = Math.floor(Math.random() * arr.length);
+	const item = arr[responseIndex];
+	return item;
+}
+const array = ["lol", "Ha Ha Ha", "good one!", "knee slapper", "That right there, is funny", "Nice"];
+const reply = getRandomResponse(array);
+
+
+	enteredJoke.innerHTML = inputJ.value + " - " + reply;
+}
+
+   
+/* jokes via https://jokeapi.dev/ */
