@@ -2,6 +2,7 @@ const jokeText= document.getElementById("joke");
 const jokeBtn = document.getElementById("jokeBtn");
 const enteredJoke = document.getElementById("showJoke");
 const inputJ = document.getElementById("enterJokes");
+const aiReply = document.getElementById("aiReply");
 
 
 jokeBtn.addEventListener("click", generateJokes)
@@ -23,17 +24,28 @@ async function generateJokes(){
 }
 
 function showTheJoke() {
-function getRandomResponse(arr) {
-	const responseIndex = Math.floor(Math.random() * arr.length);
-	const item = arr[responseIndex];
-	return item;
-}
-const array = ["lol", "Ha Ha Ha", "good one!", "knee slapper", "That right there, is funny", "Nice"];
+	function getRandomResponse(arr) {
+		const responseIndex = Math.floor(Math.random() * arr.length);
+		const item = arr[responseIndex];
+		return item;
+	}
+const array = ["lol", "Ha Ha Ha", "good one!", "knee slapper",
+ "That right there, is funny", "Nice", "OMG", 
+ "Are you this funny all the time, or is today a special occasion?", 
+ "You're killing me, Smalls.", "Stop it already." ];
 const reply = getRandomResponse(array);
 
 
-	enteredJoke.innerHTML = inputJ.value + " - " + reply;
+	enteredJoke.innerHTML = inputJ.value;
+	aiReply.innerHTML = "- " + reply;
 }
 
-   
-/* jokes via https://jokeapi.dev/ */
+const button = document.getElementById('btn');
+const content = document.getElementById('jokeText');
+
+button.addEventListener('click', function() {
+    // Toggle the hidden joke and reply 
+    content.hidden = !content.hidden;
+
+
+});
