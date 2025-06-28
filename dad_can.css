@@ -65,13 +65,21 @@ body {
 	height: 136px;
 	border-radius: 62%;
 
-	background: #607d8b;
+	background: linear-gradient( -10deg, 
+		#c0c0c0  5%, 
+		var(--White) 15%, 
+		#dcdcdc 30%, 
+		var(--White) 50%,
+		#dcdcdc 70%, 
+		var(--White) 80%,
+		#c0c0c0  90% );
+	background: #c0c0c0; 
 	margin-bottom: 512px;
 
-	position: absolute;
-		  filter: drop-shadow(0 0 0.75rem #6b6b6b);
- 	box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
+	filter: drop-shadow(0 0 0.75rem #6b6b6b);
+ 	box-shadow: inset -8px 25px 2px rgb(203 43 43 / 50%);
 
+	position: absolute;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -154,7 +162,7 @@ body {
 }
 
 .text_groan, .text_since {
-	color: var(--DadRed);
+	color: var(--DadYellow);
 	font-size: 2rem;
 	font-style: italic;
     position: absolute;
