@@ -45,7 +45,7 @@ body {
 .can {
 	width: 400px;
 	height: 620px;
-	aspect-ratio: 3 / 4;
+
 	border-radius: 100% / 20% 20% 40% 40%;
 	border-top: 4px solid var(--DadRed);
 	display: flex;
